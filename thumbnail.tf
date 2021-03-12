@@ -21,3 +21,21 @@ resource "google_pubsub_topic_iam_binding" "binding" {
 resource "google_pubsub_topic" "topic" {
   name = "default_topic"
 }
+
+resource "google_cloud_run_service" "resize" {
+  name     = "resize"
+  location = "us-central1"
+
+  template {
+    spec {
+      containers {
+        image = "gcr.io/terraforming-with-freeman/resize:v0.0.1"
+      }
+    }
+  }
+
+  traffic {
+    percent         = 100
+    latest_revision = true
+  }
+}
