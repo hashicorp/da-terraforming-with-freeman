@@ -9,7 +9,7 @@ resource "google_storage_bucket_object" "website" {
     <body>
         <ul>
             <li><img src="frank.jpg"/></li>
-            <li><img src=nori.jpg"/></li>
+            <li><img src="nori.jpg"/></li>
         </ul>
     </body>
 </html>
