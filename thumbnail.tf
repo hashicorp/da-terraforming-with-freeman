@@ -23,21 +23,25 @@ resource "google_pubsub_topic" "topic" {
 }
 
 
-resource "google_pubsub_subscription" "subscription" {
-  name  = "subscription"
-  topic = google_pubsub_topic.topic.name
+# resource "google_pubsub_subscription" "subscription" {
+#   name  = "subscription"
+#   topic = google_pubsub_topic.topic.name
 
-  ack_deadline_seconds = 20
+#   ack_deadline_seconds = 20
 
-  push_config {
-    push_endpoint = google_cloud_run_service.resize.status.url
+#   push_config {
+#     push_endpoint = google_cloud_run_service.resize.status.url
 
-    attributes = {
-      x-goog-version = "v1"
-    }
-  }
+#     attributes = {
+#       x-goog-version = "v1"
+#     }
+#   }
+# }
+
+
+output "debug" {
+  value = google_cloud_run_service.resize.status
 }
-
 
 
 resource "google_cloud_run_service" "resize" {
