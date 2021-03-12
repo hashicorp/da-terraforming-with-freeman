@@ -47,7 +47,7 @@ resource "google_cloud_run_service" "resize" {
   template {
     spec {
       containers {
-        image = "gcr.io/terraforming-with-freeman/resize:v0.0.1"
+        image = "gcr.io/terraforming-with-freeman/resize:v0.0.2"
       }
     }
   }
