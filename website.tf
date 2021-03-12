@@ -1,5 +1,5 @@
 resource "google_storage_bucket_object" "website" {
-  name   = "index.htm"
+  name    = "index.htm"
   content = <<EOF
 <!doctype html>
 <html>
@@ -14,7 +14,7 @@ resource "google_storage_bucket_object" "website" {
     </body>
 </html>
 EOF
-  bucket = google_storage_bucket.bucket.name
+  bucket  = google_storage_bucket.bucket.name
 }
 
 resource "google_storage_object_access_control" "website_public" {
