@@ -40,7 +40,7 @@ resource "google_pubsub_topic" "topic" {
 
 
 output "debug" {
-  value = google_cloud_run_service.resize.status
+  value = google_cloud_run_service.resize.status.0.url
 }
 
 
