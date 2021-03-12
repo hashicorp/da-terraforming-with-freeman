@@ -22,6 +22,24 @@ resource "google_pubsub_topic" "topic" {
   name = "default_topic"
 }
 
+
+resource "google_pubsub_subscription" "subscription" {
+  name  = "subscription"
+  topic = google_pubsub_topic.topic.name
+
+  ack_deadline_seconds = 20
+
+  push_config {
+    push_endpoint = google_cloud_run_service.resize.status.url
+
+    attributes = {
+      x-goog-version = "v1"
+    }
+  }
+}
+
+
+
 resource "google_cloud_run_service" "resize" {
   name     = "resize"
   location = "us-central1"
