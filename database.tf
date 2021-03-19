@@ -14,3 +14,11 @@ resource "google_sql_database_instance" "database" {
 resource "random_id" "database_postfix" {
   byte_length = 4
 }
+
+
+
+
+resource "google_sql_database" "website" {
+  name     = "website"
+  instance = google_sql_database_instance.database.name
+}

@@ -1,8 +1,8 @@
 resource "google_storage_notification" "notification" {
-  bucket         = google_storage_bucket.bucket.name
-  payload_format = "JSON_API_V1"
-  topic          = google_pubsub_topic.topic.id
-  event_types    = ["OBJECT_FINALIZE"]
+  bucket             = google_storage_bucket.bucket.name
+  payload_format     = "JSON_API_V1"
+  topic              = google_pubsub_topic.topic.id
+  event_types        = ["OBJECT_FINALIZE"]
   object_name_prefix = "images/"
   custom_attributes = {
     width = "800"
@@ -69,9 +69,9 @@ data "google_iam_policy" "noauth" {
 }
 
 resource "google_cloud_run_service_iam_policy" "noauth" {
-  location    = google_cloud_run_service.resize.location
-  project     = google_cloud_run_service.resize.project
-  service     = google_cloud_run_service.resize.name
+  location = google_cloud_run_service.resize.location
+  project  = google_cloud_run_service.resize.project
+  service  = google_cloud_run_service.resize.name
 
   policy_data = data.google_iam_policy.noauth.policy_data
 }
