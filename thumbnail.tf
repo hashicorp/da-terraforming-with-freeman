@@ -3,6 +3,7 @@ resource "google_storage_notification" "notification" {
   payload_format = "JSON_API_V1"
   topic          = google_pubsub_topic.topic.id
   event_types    = ["OBJECT_FINALIZE"]
+  object_name_prefix = "images/"
   custom_attributes = {
     width = "800"
   }
