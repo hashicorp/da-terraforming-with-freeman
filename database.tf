@@ -16,9 +16,23 @@ resource "random_id" "database_postfix" {
 }
 
 
-
-
 resource "google_sql_database" "website" {
   name     = "website"
   instance = google_sql_database_instance.database.name
+}
+
+resource "google_sql_user" "admin" {
+  name     = "admin"
+  instance = google_sql_database_instance.database.name
+  password = random_password.password.result
+}
+
+resource "random_password" "password" {
+  length           = 16
+  special          = true
+  override_special = "_%@"
+}
+
+output "admin_password" {
+  value = google_sql_user.admin.password
 }
