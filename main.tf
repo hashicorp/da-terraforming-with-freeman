@@ -19,3 +19,6 @@ terraform {
 provider "google" {
   project = "terraforming-with-freeman"
 }
+
+data "google_project" "project" {
+}
