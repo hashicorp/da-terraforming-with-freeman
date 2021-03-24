@@ -23,5 +23,9 @@ resource "google_cloudbuild_trigger" "build" {
         repo_name   = google_sourcerepo_repository.website_repo.name
       }
     }
+
+    artifacts {
+      images = ["gcr.io/${data.google_project.project.name}/web:v0.0.1"]
+    }
   }
 }
