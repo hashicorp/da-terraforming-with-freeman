@@ -7,6 +7,10 @@ resource "google_cloudbuild_trigger" "build" {
   build {
     step {
         name = "gcr.io/cloud-builders/npm"
+        args = ["i"]
+    }
+    step {
+        name = "gcr.io/cloud-builders/npm"
         args = ["run", "build"]
     }
     step {
