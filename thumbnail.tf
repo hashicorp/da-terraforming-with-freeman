@@ -68,7 +68,7 @@ data "google_iam_policy" "noauth" {
   }
 }
 
-resource "google_cloud_run_service_iam_policy" "noauth" {
+resource "google_cloud_run_service_iam_policy" "noauth-resize" {
   location = google_cloud_run_service.resize.location
   project  = google_cloud_run_service.resize.project
   service  = google_cloud_run_service.resize.name
