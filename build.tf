@@ -6,21 +6,21 @@ resource "google_cloudbuild_trigger" "build" {
 
   build {
     step {
-        name = "gcr.io/cloud-builders/npm"
-        args = ["i"]
+      name = "gcr.io/cloud-builders/npm"
+      args = ["i"]
     }
     step {
-        name = "gcr.io/cloud-builders/npm"
-        args = ["run", "build"]
+      name = "gcr.io/cloud-builders/npm"
+      args = ["run", "build"]
     }
     step {
       name = "gcr.io/cloud-builders/docker"
-      args = [ "build", "-t", "gcr.io/${data.google_project.project.name}/web:v0.0.1", "." ]
+      args = ["build", "-t", "gcr.io/${data.google_project.project.name}/web:v0.0.1", "."]
     }
 
     source {
       repo_source {
-        repo_name   = google_sourcerepo_repository.website_repo.name
+        repo_name = google_sourcerepo_repository.website_repo.name
       }
     }
 

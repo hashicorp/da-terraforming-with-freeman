@@ -6,6 +6,11 @@ resource "google_cloud_run_service" "website" {
     spec {
       containers {
         image = "gcr.io/terraforming-with-freeman/web:v0.0.1"
+        ports {
+          name           = "http"
+          protocol       = "http"
+          container_port = 80
+        }
       }
     }
   }
