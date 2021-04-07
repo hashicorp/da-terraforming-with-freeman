@@ -28,5 +28,5 @@ resource "google_cloud_run_service_iam_policy" "noauth-website" {
 }
 
 output "website_url" {
-  value = google_cloud_run_service.website.status.url
+  value = google_cloud_run_service.website
 }
