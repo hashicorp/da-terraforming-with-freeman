@@ -26,3 +26,7 @@ resource "google_cloud_run_service_iam_policy" "noauth-website" {
 
   policy_data = data.google_iam_policy.noauth.policy_data
 }
+
+output "website_url" {
+  value = google_cloud_run_service.status.url
+}
