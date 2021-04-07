@@ -15,7 +15,7 @@ resource "google_cloudbuild_trigger" "build" {
     }
     step {
       name = "gcr.io/cloud-builders/docker"
-      args = ["build", "-t", "gcr.io/${data.google_project.project.name}/web:v0.0.1", "."]
+      args = ["build", "-t", "gcr.io/${data.google_project.project.name}/web:v0.0.2", "."]
     }
 
     source {
@@ -25,7 +25,7 @@ resource "google_cloudbuild_trigger" "build" {
     }
 
     artifacts {
-      images = ["gcr.io/${data.google_project.project.name}/web:v0.0.1"]
+      images = ["gcr.io/${data.google_project.project.name}/web:v0.0.2"]
     }
   }
 }
