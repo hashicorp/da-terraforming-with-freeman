@@ -7,7 +7,6 @@ resource "google_cloud_run_service" "website" {
       containers {
         image = "gcr.io/terraforming-with-freeman/web:v0.0.1"
         ports {
-          name           = "h2c"
           container_port = 80
         }
       }
