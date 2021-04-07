@@ -5,7 +5,7 @@ resource "google_cloud_run_service" "website" {
   template {
     spec {
       containers {
-        image = "gcr.io/terraforming-with-freeman/web:v0.0.1"
+        image = "gcr.io/terraforming-with-freeman/web:v0.0.2"
         ports {
           container_port = 3000
         }
