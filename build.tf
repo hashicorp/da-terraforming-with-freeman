@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "google_cloudbuild_trigger" "build" {
   trigger_template {
     branch_name = "master"

@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "google_sql_database_instance" "database" {
   name             = "database-${random_id.database_postfix.hex}"
   database_version = "POSTGRES_11"

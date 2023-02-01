@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "google_cloud_run_service" "website" {
   name     = "website"
   location = "us-central1"
