@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "google_storage_notification" "notification" {
   bucket             = google_storage_bucket.bucket.name
   payload_format     = "JSON_API_V1"

@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "google_storage_bucket_object" "frank_image" {
   name   = "frank.jpg"
   source = "assets/Frank.jpg"
