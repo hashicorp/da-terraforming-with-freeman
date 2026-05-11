@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "google_storage_notification" "notification" {
   bucket             = google_storage_bucket.bucket.name
   payload_format     = "JSON_API_V1"

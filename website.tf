@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "google_cloud_run_service" "website" {
   name     = "website"
   location = "us-central1"

@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "google_storage_bucket_object" "frank_image" {
   name   = "frank.jpg"
   source = "assets/Frank.jpg"
