@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "google_storage_bucket" "bucket" {
   name          = "freeman-dogs"
   location      = "US"

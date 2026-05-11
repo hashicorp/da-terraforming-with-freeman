@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "google_sql_database_instance" "database" {
   name             = "database-${random_id.database_postfix.hex}"
   database_version = "POSTGRES_11"
